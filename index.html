@@ -33,44 +33,79 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-
     <!-- <base href = "https://www.g12contacts.com" /> -->
   </head>
 
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="">G12 Contacts App</a>
+  </nav>
+
   <body>
-    <h1 style="text-align: center;">G12 Contacts App</h1>
-    <!-- <div id="app"></div> -->
     <div style="text-align: center;">
-      <form>
-        <label for="username">Username:</label><br />
-        <input type="text" id="username" name="username" /><br />
-        <br />
-        <label for="password">Password:</label><br />
-        <input type="text" id="password" name="password" />
-      </form>
-      <br />
-      <a href="welcome.html">
-        <input
-          type="button"
-          class="btn btn-primary"
-          id="button"
-          value="Login"
-        />
-      </a>
-      <br />
-      <br />
-      <p1>
-        Don't have an account?
-      </p1>
-      <br />
-      <br />
-      <input
-        type="button"
-        class="btn btn-primary"
-        id="button"
-        value="Sign Up"
-      />
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form>
+            <h1>Sign Up</h1>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+            />
+            <input type="text" id="email" name="email" placeholder="Email" />
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+            <a href="welcome.html">
+              <button>Sign Up</button>
+            </a>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form>
+            <h1>Sign In</h1>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+            />
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+
+            <a href="welcome.html">
+              <button>Login</button>
+            </a>
+          </form>
+        </div>
+        <div class="form-container overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>welcome back!</h1>
+              <p>
+                To keep connected with us please login with your personal info
+              </p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, friend!</h1>
+              <p>
+                Enter your personal details and start your journey with us!
+              </p>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
