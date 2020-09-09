@@ -7,7 +7,7 @@
 	$lastName = "";
 
 	// connect to database
-	$conn = new mysqli("localhost", "thisisthegroup@crm-group12.com", "thisisthegroup", "komilak_COP4331");
+	$conn = new mysqli("crm-group12.com", "komilak_groupuser", "thisisthegroup", "komilak_COP4331");
 	// check connection
 	if ($conn->connect_error)
 	{
