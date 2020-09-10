@@ -1,7 +1,5 @@
-import "./styles.css";
-
-const signupButton = document.getElementById("signUp");
-const signinButton = document.getElementById("signIn");
+const signupButton = document.getElementById("signUpGhost");
+const signinButton = document.getElementById("loginGhost");
 const container = document.getElementById("container");
 
 signupButton.addEventListener("click", () =>

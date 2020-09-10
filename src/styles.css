@@ -53,8 +53,13 @@ button:focus {
   outline: none;
 }
 
+button.classic {
+  border-radius: 20px;
+}
+
 button.ghost {
   background: transparent;
+  border-radius: 20px;
   border-color: #fff;
 }
 

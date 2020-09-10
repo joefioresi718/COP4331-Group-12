@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="src/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,11 +21,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -59,13 +60,13 @@
               placeholder="Password"
             />
             <a href="./welcome.html">
-              <button>Sign Up</button>
+              <button class="classic" id="signUpActive">Sign Up</button>
             </a>
           </form>
         </div>
         <div class="form-container sign-in-container">
           <form>
-            <h1>Sign In</h1>
+            <h1>Login</h1>
             <input
               type="text"
               id="username"
@@ -79,31 +80,31 @@
               placeholder="Password"
             />
             <a href="welcome.html">
-              <button>Login</button>
+              <button class="classic" id="loginActive">Login</button>
             </a>
           </form>
         </div>
         <div class="form-container overlay-container">
           <div class="overlay">
             <div class="overlay-panel overlay-left">
-              <h1>welcome back!</h1>
+              <h1>Welcome back!</h1>
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button class="ghost" id="signIn">Sign In</button>
+              <button class="ghost" id="loginGhost">Login</button>
             </div>
             <div class="overlay-panel overlay-right">
               <h1>Hello, friend!</h1>
               <p>
                 Enter your personal details and start your journey with us!
               </p>
-              <button class="ghost" id="signUp">Sign Up</button>
+              <button class="ghost" id="signUpGhost">Sign Up</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="src/js/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
