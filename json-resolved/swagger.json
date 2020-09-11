@@ -78,6 +78,31 @@
           }
         }
       }
+    },
+    "/CreateContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Adds contact to logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newContact",
+          "description" : "New contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Contact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully added contact"
+          },
+          "404" : {
+            "description" : "Could not add contact"
+          }
+        }
+      }
     }
   },
   "definitions" : {
@@ -118,6 +143,32 @@
         "email" : {
           "type" : "string",
           "example" : "mike.waz@gmail.com"
+        }
+      }
+    },
+    "Contact" : {
+      "type" : "object",
+      "required" : [ "ID", "email", "firstName", "lastName", "phone" ],
+      "properties" : {
+        "firstName" : {
+          "type" : "string",
+          "example" : "Mike"
+        },
+        "lastName" : {
+          "type" : "string",
+          "example" : "Wazowski"
+        },
+        "email" : {
+          "type" : "string",
+          "example" : "mike.waz@gmail.com"
+        },
+        "phone" : {
+          "type" : "integer",
+          "example" : 1234567890
+        },
+        "ID" : {
+          "type" : "integer",
+          "example" : 1
         }
       }
     }
