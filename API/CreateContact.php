@@ -6,8 +6,7 @@
 	$firstName = "";
 	$lastName = "";
   $email = "";
-  $username = "";
-  $password = "";
+  $phone = 0;
 
 	// connect to database
 	$conn = new mysqli("crm-group12.com", "komilak_groupuser", "thisisthegroup", "komilak_COP4331");
@@ -18,23 +17,16 @@
 	}
 	else
 	{
-		// set variables from inData
-    $firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $email = $inData["email"];
-    $username = $inData["login"];
-    $password = $inData["password"];
-
-		// put new user information in User table
-		$sql = "INSERT INTO Users VALUES ($id, '$firstName', '$lastName', '$email', '$username', '$password')";
+		// insert ID, names after login
+		$firstName = $inData["firstName"];
+		$lastName = $inData["lastName"];
+		$email = $inData["email"];
+		$phone = $inData["phone"];
+		$id = $inData["ID"];
+		$date = date('Y-m-d');
+		$sql = "INSERT INTO Contacts VALUES (0, '$firstName', '$lastName', '$email', '$phone', '$date','$id')";
 		$result = $conn->query($sql);
-		$sql = "SELECT ID FROM Users where Username='$username'";
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
-		$id = $row["ID"];
-
-		// sends back json with username, id, and success message
-		returnWithInfo( $username, $id );
+		returnWithInfo($firstName, $lastName, $date);
 		$conn->close();
 	}
 
@@ -59,9 +51,9 @@
 	}
 
 	// prints out the id and names as json
-	function returnWithInfo( $username, $id )
+	function returnWithInfo( $firstName, $lastName, $date )
 	{
-		$retValue = '{"username":"' . $username . '","id":"' . $id . '","error":"None","successfullyCreated":"true"}';
+		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","date":"' . $date . '","error":"None","successfullyCreated":"true"}';
 		sendResultInfoAsJson( $retValue );
 	}
 
