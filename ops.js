@@ -1,4 +1,4 @@
-var urlBase = 'http://crm-group12.com/API';
+var urlBase = 'https://crm-group12.com/API';
 var extension = 'php';
 
 var userId = 0;
@@ -14,10 +14,10 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
-	username = "RickL";
-	password = "COP4331";
+	var username = document.getElementById("loginUsername").value;
+	var password = document.getElementById("loginPassword").value;
+	// username = "RickL";
+	// password = "COP4331";
 	console.log("username: " + username);
 	console.log("password: " + password);
 //	var hash = md5( password );
