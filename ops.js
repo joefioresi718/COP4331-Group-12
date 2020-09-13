@@ -1,4 +1,4 @@
-var urlBase = 'https://crm-group12.com/API';
+var urlBase = 'http://crm-group12.com/API';
 var extension = 'php';
 
 var userId = 0;
