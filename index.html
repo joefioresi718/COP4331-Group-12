@@ -33,7 +33,10 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <!-- <base href = "https://www.g12contacts.com"/> -->
+
+    <script type="text/javascript" src="./md5.js"></script>
+    <script type="text/javascript" src="./ops.js"></script>
+    <base href = "https://crm-group12.com"/>
   </head>
 
   <nav class="navbar navbar-light bg-light">
@@ -96,9 +99,7 @@
               name="password"
               placeholder="Password"
             />
-            <a href="welcome.html">
-              <button class="classic" id="loginActive">Login</button>
-            </a>
+            <button class="classic" id="loginActive" onclick="doLogin();">Login</button>
           </form>
         </div>
         <div class="form-container overlay-container">

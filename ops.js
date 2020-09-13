@@ -1,4 +1,4 @@
-var urlBase = 'http://COP4331-3.com/LAMPAPI';
+var urlBase = 'http://crm-group12.com/API';
 var extension = 'php';
 
 var userId = 0;
@@ -7,18 +7,21 @@ var lastName = "";
 
 function doLogin()
 {
+
+	console.log("hellloooooo"); 
+
 	userId = 0;
 	firstName = "";
 	lastName = "";
 	
-	var login = document.getElementById("loginName").value;
-	var password = document.getElementById("loginPassword").value;
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
 //	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"login" : "' + login + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	var url = urlBase + '/Login.' + extension;
 
 	var xhr = new XMLHttpRequest();
@@ -43,7 +46,7 @@ function doLogin()
 
 		saveCookie();
 	
-		window.location.href = "color.html";
+		window.location.href = "welcome.html";
 	}
 	catch(err)
 	{
