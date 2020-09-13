@@ -16,6 +16,10 @@ function doLogin()
 	
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
+	username = "RickL";
+	password = "COP4331";
+	console.log("username: " + username);
+	console.log("password: " + password);
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
@@ -29,6 +33,7 @@ function doLogin()
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
+		console.log(jsonPayload);
 		xhr.send(jsonPayload);
 		
 		var jsonObject = JSON.parse( xhr.responseText );
