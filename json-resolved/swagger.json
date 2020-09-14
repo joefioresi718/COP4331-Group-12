@@ -6,7 +6,7 @@
     "title" : "POOP Group 12 API"
   },
   "host" : "crm-group12.com",
-  "basePath" : "/PHP/",
+  "basePath" : "/API/",
   "schemes" : [ "http" ],
   "paths" : {
     "/AmAlive.php" : {
@@ -103,14 +103,89 @@
           }
         }
       }
+    },
+    "/UpdateContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Updates a contact of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newContact",
+          "description" : "New contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Contact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully updated contact"
+          },
+          "404" : {
+            "description" : "Could not update contact"
+          }
+        }
+      }
+    },
+    "/SearchContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Searches contacts of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newContact",
+          "description" : "New contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Contact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully found contact"
+          },
+          "404" : {
+            "description" : "Could not find contact"
+          }
+        }
+      }
+    },
+    "/DeleteContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Deletes contatct of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newContact",
+          "description" : "New contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Contact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted contact"
+          },
+          "404" : {
+            "description" : "Could not delete contact"
+          }
+        }
+      }
     }
   },
   "definitions" : {
     "Login" : {
       "type" : "object",
-      "required" : [ "login", "password" ],
+      "required" : [ "password", "username" ],
       "properties" : {
-        "login" : {
+        "username" : {
           "type" : "string",
           "example" : "testUser"
         },
@@ -122,9 +197,9 @@
     },
     "User" : {
       "type" : "object",
-      "required" : [ "email", "firstName", "lastName", "login", "password" ],
+      "required" : [ "email", "firstName", "lastName", "password", "username" ],
       "properties" : {
-        "login" : {
+        "username" : {
           "type" : "string",
           "example" : "testUser"
         },
