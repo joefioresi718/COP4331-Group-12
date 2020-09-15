@@ -112,8 +112,8 @@
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
-          "name" : "newContact",
-          "description" : "New contact",
+          "name" : "updateContact",
+          "description" : "Updates existing contact",
           "required" : false,
           "schema" : {
             "$ref" : "#/definitions/Contact"
@@ -129,7 +129,7 @@
         }
       }
     },
-    "/SearchContact.php" : {
+    "/SearchContacts.php" : {
       "post" : {
         "tags" : [ "Contacts" ],
         "summary" : "Searches contacts of logged in user",
@@ -141,7 +141,7 @@
           "description" : "Search contact",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/Contact"
+            "$ref" : "#/definitions/Searching"
           }
         } ],
         "responses" : {
@@ -166,7 +166,7 @@
           "description" : "Delete contact",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/Contact"
+            "$ref" : "#/definitions/Delete"
           }
         } ],
         "responses" : {
@@ -209,7 +209,7 @@
         },
         "firstName" : {
           "type" : "string",
-          "example" : "Smith"
+          "example" : "John"
         },
         "lastName" : {
           "type" : "string",
@@ -241,6 +241,30 @@
           "type" : "integer",
           "example" : 1234567890
         },
+        "ID" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "Searching" : {
+      "type" : "object",
+      "required" : [ "ID", "search" ],
+      "properties" : {
+        "ID" : {
+          "type" : "integer",
+          "example" : 1
+        },
+        "search" : {
+          "type" : "string",
+          "example" : "Mike"
+        }
+      }
+    },
+    "Delete" : {
+      "type" : "object",
+      "required" : [ "ID" ],
+      "properties" : {
         "ID" : {
           "type" : "integer",
           "example" : 1
