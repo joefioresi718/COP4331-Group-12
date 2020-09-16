@@ -51,37 +51,36 @@
             <h1>Sign Up</h1>
             <input
               type="text"
-              id="username"
+              id="signupUsername"
               name="username"
               placeholder="Username"
             />
             <input
               type="text"
-              id="firstName"
+              id="signupFirstName"
               name="firstName"
               placeholder="First Name"
             />
             <input
               type="text"
-              id="lastName"
+              id="signupLastName"
               name="lastName"
               placeholder="Last Name"
             />
             <input
               type="text"
-              id="email"
+              id="signupEmail"
               name="email"
               placeholder="Email"
             />
             <input
               type="text"
-              id="password"
+              id="signupPassword"
               name="password"
               placeholder="Password"
             />
-            <a href="./welcome.html">
-              <button class="classic" id="signUpActive">Sign Up</button>
-            </a>
+            <button class="classic" id="signUpActive" onclick="doSignup();">Sign Up</button>
+            <span id="loginResult"></span>
           </form>
         </div>
         <div class="form-container sign-in-container">

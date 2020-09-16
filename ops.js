@@ -8,7 +8,7 @@ var lastName = "";
 function doLogin()
 {
 
-	console.log("hellloooooo"); 
+	console.log("logging in!"); 
 
 	userId = 0;
 	firstName = "";
@@ -16,6 +16,7 @@ function doLogin()
 	
 	var username = document.getElementById("loginUsername").value;
 	var password = document.getElementById("loginPassword").value;
+
 	// username = "RickL";
 	// password = "COP4331";
 	console.log("username: " + username);
@@ -27,6 +28,69 @@ function doLogin()
 //	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	var url = urlBase + '/Login.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		console.log(jsonPayload);
+		xhr.send(jsonPayload);
+		
+		var jsonObject = JSON.parse( xhr.responseText );
+		
+		userId = jsonObject.id;
+		
+		if( userId < 1 )
+		{
+			document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+			return;
+		}
+		
+		firstName = jsonObject.firstName;
+		lastName = jsonObject.lastName;
+
+		saveCookie();
+	
+		window.location.href = "welcome.html";
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+
+}
+
+function doSignup()
+{
+
+	console.log("signing up!"); 
+
+	firstName = "";
+	lastName = "";
+	username = "";
+	password = ""; 
+	email = "";
+	
+	var firstName = document.getElementById("signupFirstName").value;
+	var lastName = document.getElementById("signupLastName").value;
+	var username = document.getElementById("signupEmail").value;
+	var email = document.getElementById("signupUsername").value;
+	var password = document.getElementById("signupPassword").value;
+
+	console.log("firstName: " + firstName);
+	console.log("lastName: " + lastName);
+	console.log("email: " + email);
+	console.log("username: " + username);
+	console.log("password: " + password);
+	
+//	var hash = md5( password );
+	
+	document.getElementById("signupResult").innerHTML = "";
+
+//	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "username" : "' + username + '", "password" : "' + password + '"}';
+	var url = urlBase + '/Signup.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
