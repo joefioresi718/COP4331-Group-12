@@ -16,7 +16,7 @@
 	else
 	{
 		// get ID, names after login
-		$sql = "SELECT ID,FirstName,LastName FROM Users where Username='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+		$sql = "SELECT ID,FirstName,LastName FROM Users where Username='" . $inData["username"] . "' and Password='" . $inData["password"] . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{

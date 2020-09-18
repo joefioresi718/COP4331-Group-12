@@ -6,7 +6,7 @@
     "title" : "POOP Group 12 API"
   },
   "host" : "crm-group12.com",
-  "basePath" : "/PHP/",
+  "basePath" : "/API/",
   "schemes" : [ "http" ],
   "paths" : {
     "/AmAlive.php" : {
@@ -103,14 +103,89 @@
           }
         }
       }
+    },
+    "/UpdateContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Updates a contact of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "updateContact",
+          "description" : "Updates existing contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Contact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully updated contact"
+          },
+          "404" : {
+            "description" : "Could not update contact"
+          }
+        }
+      }
+    },
+    "/SearchContacts.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Searches contacts of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "searchContact",
+          "description" : "Search contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Searching"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully found contact"
+          },
+          "404" : {
+            "description" : "Could not find contact"
+          }
+        }
+      }
+    },
+    "/DeleteContact.php" : {
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Deletes contatct of logged in user",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "delContact",
+          "description" : "Delete contact",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Delete"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted contact"
+          },
+          "404" : {
+            "description" : "Could not delete contact"
+          }
+        }
+      }
     }
   },
   "definitions" : {
     "Login" : {
       "type" : "object",
-      "required" : [ "login", "password" ],
+      "required" : [ "password", "username" ],
       "properties" : {
-        "login" : {
+        "username" : {
           "type" : "string",
           "example" : "testUser"
         },
@@ -122,9 +197,9 @@
     },
     "User" : {
       "type" : "object",
-      "required" : [ "email", "firstName", "lastName", "login", "password" ],
+      "required" : [ "email", "firstName", "lastName", "password", "username" ],
       "properties" : {
-        "login" : {
+        "username" : {
           "type" : "string",
           "example" : "testUser"
         },
@@ -134,15 +209,15 @@
         },
         "firstName" : {
           "type" : "string",
-          "example" : "Mike"
+          "example" : "John"
         },
         "lastName" : {
           "type" : "string",
-          "example" : "Wazowski"
+          "example" : "Smith"
         },
         "email" : {
           "type" : "string",
-          "example" : "mike.waz@gmail.com"
+          "example" : "jsmith@gmail.com"
         }
       }
     },
@@ -166,6 +241,30 @@
           "type" : "integer",
           "example" : 1234567890
         },
+        "ID" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "Searching" : {
+      "type" : "object",
+      "required" : [ "ID", "search" ],
+      "properties" : {
+        "ID" : {
+          "type" : "integer",
+          "example" : 1
+        },
+        "search" : {
+          "type" : "string",
+          "example" : "Mike"
+        }
+      }
+    },
+    "Delete" : {
+      "type" : "object",
+      "required" : [ "ID" ],
+      "properties" : {
         "ID" : {
           "type" : "integer",
           "example" : 1

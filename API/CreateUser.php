@@ -22,7 +22,7 @@
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
     $email = $inData["email"];
-    $username = $inData["login"];
+    $username = $inData["username"];
     $password = $inData["password"];
 
 		// put new user information in User table
@@ -34,7 +34,7 @@
 		$id = $row["ID"];
 
 		// sends back json with username, id, and success message
-		returnWithInfo( $username, $id );
+		returnWithInfo( $username, $password, $id );
 		$conn->close();
 	}
 
@@ -59,9 +59,9 @@
 	}
 
 	// prints out the id and names as json
-	function returnWithInfo( $username, $id )
+	function returnWithInfo( $username, $password, $id )
 	{
-		$retValue = '{"username":"' . $username . '","id":"' . $id . '","error":"None","successfullyCreated":"true"}';
+		$retValue = '{"username":"' . $username . '","password":"' . $password . '","id":"' . $id . '","error":"None","successfullyCreated":"true"}';
 		sendResultInfoAsJson( $retValue );
 	}
 

@@ -33,7 +33,10 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <!-- <base href = "https://www.g12contacts.com"/> -->
+
+    <script type="text/javascript" src="./md5.js"></script>
+    <script type="text/javascript" src="./ops.js"></script>
+    <base href = "http://crm-group12.com"/>
   </head>
 
   <nav class="navbar navbar-light bg-light">
@@ -48,37 +51,36 @@
             <h1>Sign Up</h1>
             <input
               type="text"
-              id="username"
+              id="signupUsername"
               name="username"
               placeholder="Username"
             />
             <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="First Name"
-            />
-            <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Last Name"
-            />
-            <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
+              type="text"
+              id="signupFirstName"
+              name="firstName"
+              placeholder="First Name"
             />
             <input
               type="text"
-              id="password"
+              id="signupLastName"
+              name="lastName"
+              placeholder="Last Name"
+            />
+            <input
+              type="text"
+              id="signupEmail"
+              name="email"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              id="signupPassword"
               name="password"
               placeholder="Password"
             />
-            <a href="./welcome.html">
-              <button class="classic" id="signUpActive">Sign Up</button>
-            </a>
+            <button class="classic" id="signUpActive" onclick="doSignup();">Sign Up</button>
+            <span id="loginResult"></span>
           </form>
         </div>
         <div class="form-container sign-in-container">
@@ -86,19 +88,18 @@
             <h1>Login</h1>
             <input
               type="text"
-              id="username"
+              id="loginUsername"
               name="username"
               placeholder="Username"
             />
             <input
-              type="text"
-              id="password"
+              type="password"
+              id="loginPassword"
               name="password"
               placeholder="Password"
             />
-            <a href="welcome.html">
-              <button class="classic" id="loginActive">Login</button>
-            </a>
+            <button class="classic" id="loginActive" onclick="doLogin();">Login</button>
+            <span id="loginResult"></span>
           </form>
         </div>
         <div class="form-container overlay-container">
