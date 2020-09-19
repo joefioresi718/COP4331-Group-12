@@ -30,29 +30,33 @@ function doLogin()
 	var url = urlBase + '/Login.' + extension;
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
-		console.log(jsonPayload);
-		xhr.send(jsonPayload);
-		
-		var jsonObject = JSON.parse( xhr.responseText );
-		
-		userId = jsonObject.id;
-		
-		if( userId < 1 )
+		xhr.onreadystatechange = function() 
 		{
-			document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-			return;
-		}
-		
-		firstName = jsonObject.firstName;
-		lastName = jsonObject.lastName;
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				var jsonObject = JSON.parse( xhr.responseText );
 
-		saveCookie();
-	
-		window.location.href = "welcome.html";
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{
+					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					return;
+				}
+
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+		
+				saveCookie();
+			
+				window.location.href = "welcome.html";
+			}
+		};
+		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
@@ -90,7 +94,7 @@ function doSignup()
 
 //	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "username" : "' + username + '", "password" : "' + password + '"}';
-	var url = urlBase + '/Signup.' + extension;
+	var url = urlBase + '/CreateUser.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
@@ -103,15 +107,6 @@ function doSignup()
 		var jsonObject = JSON.parse( xhr.responseText );
 		
 		userId = jsonObject.id;
-		
-		if( userId < 1 )
-		{
-			document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-			return;
-		}
-		
-		firstName = jsonObject.firstName;
-		lastName = jsonObject.lastName;
 
 		saveCookie();
 	
@@ -119,7 +114,7 @@ function doSignup()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("signupResult").innerHTML = err.message;
 	}
 
 }
