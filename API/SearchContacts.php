@@ -1,10 +1,8 @@
 <?php
+
 	//Search Contacts
 	$inData = getRequestInfo();
-	
-	$id = 0;
-	$firstName = "";
-	$lastName = "";
+
 	$searchResults = "";
 	$searchCount = 0;
 
@@ -17,7 +15,7 @@
 	}
 	else
 	{
-		$sql = "select Name from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+		$sql = "SELECT FirstName from Contacts where FirstName like '%" . $inData["search"] . "%' and UserID=" . $inData["ID"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -28,8 +26,9 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["Name"] . '"';
+				$searchResults .= '"' . $row["FirstName"] . '"';
 			}
+			returnWithInfo( $searchResults, $searchCount );
 		}
 		else
 		{
@@ -59,9 +58,9 @@
 	}
 
 	// prints out the id and names as json
-	function returnWithInfo( $firstName, $lastName, $date )
+	function returnWithInfo( $searchResults, $searchCount )
 	{
-		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","date":"' . $date . '","error":"None","successfullyCreated":"true"}';
+		$retValue = '{"searchResults":' . $searchResults . ',"searchCount":"' . $searchCount . '","error":"None"}';
 		sendResultInfoAsJson( $retValue );
 	}
 
