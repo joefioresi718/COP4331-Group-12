@@ -41,6 +41,7 @@ function doLogin()
 				var jsonObject = JSON.parse( xhr.responseText );
 
 				userId = jsonObject.id;
+				console.log("user ID is " + userId);
 		
 				if( userId < 1 )
 				{
@@ -78,8 +79,8 @@ function doSignup()
 	
 	var firstName = document.getElementById("signupFirstName").value;
 	var lastName = document.getElementById("signupLastName").value;
-	var username = document.getElementById("signupEmail").value;
-	var email = document.getElementById("signupUsername").value;
+	var username = document.getElementById("signupUsername").value;
+	var email = document.getElementById("signupEmail").value;
 	var password = document.getElementById("signupPassword").value;
 
 	console.log("firstName: " + firstName);
@@ -95,13 +96,15 @@ function doSignup()
 //	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "username" : "' + username + '", "password" : "' + password + '"}';
 	var url = urlBase + '/CreateUser.' + extension;
+	console.log(url);
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
-		console.log(jsonPayload);
+		//console.log(jsonPayload);
+		console.log("hioiiiiiiiii");
 		xhr.send(jsonPayload);
 		
 		var jsonObject = JSON.parse( xhr.responseText );
