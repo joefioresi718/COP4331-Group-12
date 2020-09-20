@@ -52,7 +52,7 @@ function doLogin()
 
 		saveCookie();
 	
-		window.location.href = "welcome.html";
+		window.location.href = "http://crm-group12.com/welcome.html";
 	}
 	catch(err)
 	{
@@ -99,7 +99,6 @@ function doSignup()
 	try
 	{
 		//console.log(jsonPayload);
-		console.log("hioiiiiiiiii");
 		xhr.send(jsonPayload);
 		
 		var jsonObject = JSON.parse( xhr.responseText );
