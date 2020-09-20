@@ -50,20 +50,40 @@
     <div class="modal fade" id="mymodal">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header text-center d-block">
             <h3>Add Contact</h3>
           </div>
           <div class="modal-body">
+            <div class="form-container modal-container">
             <input
                 type="text"
-                id="newContact"
-                name="newContact"
-                placeholder="name"
+                id="newFirstName"
+                name="newFirstName"
+                placeholder="First Name"
             />
+            <input
+            type="text"
+            id="newLastName"
+            name="newLastName"
+            placeholder="Last Name"
+            />
+            <input
+            type="text"
+            id="newEmail"
+            name="newEmail"
+            placeholder="Email"
+            />
+            <input
+            type="text"
+            id="newPhone"
+            name="newPhone"
+            placeholder="Phone #"
+            />
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button> 
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addContact();">Cancel</button> 
           </div>
         </div>
       </div>

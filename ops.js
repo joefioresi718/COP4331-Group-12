@@ -166,7 +166,7 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addColor()
+function addContact()
 {
 	var newColor = document.getElementById("colorText").value;
 	document.getElementById("colorAddResult").innerHTML = "";

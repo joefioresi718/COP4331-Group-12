@@ -111,6 +111,10 @@ form {
   z-index: 2;
 }
 
+.modal-container {
+  width: 50%;
+}
+
 .sign-up-container {
   left: 0;
   width: 50%;
@@ -183,4 +187,14 @@ form {
 
 .container.right-panel-active .overlay-left {
   transform: translateX(0%);
+}
+
+.modal-body{
+  position: relative;
+  overflow-y: auto;    
+  overflow-x: auto;
+  width: auto;
+  height: auto;
+  min-height: 260px;
+  align-content: center;
 }
