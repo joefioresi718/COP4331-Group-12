@@ -41,9 +41,10 @@
 
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="welcome.html">G12 Contacts App</a>
-    <form class="form-inline">
+    <!-- <form class="form-inline"> -->
       <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#mymodal">Add Contact</button>
-    </form>
+      <button class="btn btn-primary" type="button" onclick="doLogout();">Logout</button>
+    <!-- </form> -->
   </nav>
 
   <body>
@@ -82,8 +83,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button> 
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addContact();">Cancel</button> 
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addContact();">Add</button> 
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
           </div>
         </div>
       </div>

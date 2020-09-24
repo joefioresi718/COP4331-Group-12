@@ -104,6 +104,7 @@ function doSignup()
 		var jsonObject = JSON.parse( xhr.responseText );
 		
 		userId = jsonObject.id;
+		//userId = jsonOb
 
 		saveCookie();
 	
