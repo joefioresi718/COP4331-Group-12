@@ -3,7 +3,7 @@
 	//Search Contacts
 	$inData = getRequestInfo();
 
-	$searchResults = "";
+	$searchResults = "[";
 	$searchCount = 0;
 
 	// connect to database
@@ -28,6 +28,7 @@
 				$searchCount++;
 				$searchResults .= '"' . $row["FirstName"] . '"';
 			}
+			$searchResults .= "]";
 			returnWithInfo( $searchResults, $searchCount );
 		}
 		else
