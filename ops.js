@@ -211,7 +211,7 @@ function searchContact()
 	
 	var contactList = "";
 	
-	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
+	var jsonPayload = '{"search" : "' + srch + '","ID" : ' + userId + '}';
 	var url = urlBase + '/SearchContacts.' + extension;
 	
 	var xhr = new XMLHttpRequest();
@@ -225,11 +225,12 @@ function searchContact()
 			{
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
+				console.log(jsonObject);
 				
-				for( var i=0; i<jsonObject.results.length; i++ )
+				for( var i=0; i<jsonObject.searchResults.length; i++ )
 				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
+					contactList += jsonObject.searchResults[i];
+					if( i < jsonObject.searchResults.length - 1 )
 					{
 						contactList += "<br />\r\n";
 					}
