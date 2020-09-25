@@ -176,15 +176,14 @@ function addContact()
 	email = "";
 	phone = "";
 	console.log("here we are now, entertain us");
+	console.log("userId is:" + userId);
 	var firstName = document.getElementById("firstNameContact").value;
 	var lastName = document.getElementById("lastNameContact").value;
 	var email = document.getElementById("emailContact").value;
 	var phone = document.getElementById("phoneContact").value;
 	document.getElementById("contactAddResult").innerHTML = "";
-	
 	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "phone" : "' + phone + '", "ID" : "' + userId + '"}';
 	var url = urlBase + '/CreateContact.' + extension;
-	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
