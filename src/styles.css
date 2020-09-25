@@ -72,7 +72,7 @@ button.ghost {
   font-size: 0.6em;
 }
 
-form {
+.form {
   background-color: #ffffff;
   display: flex;
   align-items: center;

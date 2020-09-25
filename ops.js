@@ -8,7 +8,7 @@ var lastName = "";
 function doLogin()
 {
 
-	console.log("logging in!"); 
+	console.log("logging in! ASDFGHJKJHGFDSDFGHJKJHGFDRGHJKJHGFRDE"); 
 
 	userId = 0;
 	firstName = "";
@@ -160,6 +160,7 @@ function readCookie()
 
 function doLogout()
 {
+	console.log("logging out!");
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -169,11 +170,20 @@ function doLogout()
 
 function addContact()
 {
-	var newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+
+	firstName = "";
+	lastName = "";
+	email = "";
+	phone = "";
+	console.log("here we are now, entertain us");
+	var firstName = document.getElementById("firstNameContact").value;
+	var lastName = document.getElementById("lastNameContact").value;
+	var email = document.getElementById("emailContact").value;
+	var phone = document.getElementById("phoneContact").value;
+	document.getElementById("contactAddResult").innerHTML = "";
 	
-	var jsonPayload = '{"color" : "' + newColor + '", "userId" : ' + userId + '}';
-	var url = urlBase + '/AddColor.' + extension;
+	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "phone" : "' + phone + '", "ID" : "' + userId + '"}';
+	var url = urlBase + '/CreateContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -184,14 +194,16 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				console.log("added the contact!!! yay!!!");
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		console.log("didnt add the contact!! nayyyy :(");
+		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 	
 }

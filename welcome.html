@@ -58,33 +58,34 @@
             <div class="form-container modal-container">
             <input
                 type="text"
-                id="newFirstName"
-                name="newFirstName"
+                id="firstNameContact"
+                name="firstNameContact"
                 placeholder="First Name"
             />
             <input
             type="text"
-            id="newLastName"
-            name="newLastName"
+            id="lastNameContact"
+            name="lastNameContact"
             placeholder="Last Name"
             />
             <input
             type="text"
-            id="newEmail"
-            name="newEmail"
+            id="emailContact"
+            name="emailContact"
             placeholder="Email"
             />
             <input
             type="text"
-            id="newPhone"
-            name="newPhone"
+            id="phoneContact"
+            name="phoneContact"
             placeholder="Phone #"
             />
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addContact();">Add</button> 
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
+            <button class="btn btn-primary" type="button" data-dismiss="modal" id="addContact" onclick="addContact();">Add</button>
+            <span id="contactAddResult"></span> 
+            <button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button> 
           </div>
         </div>
       </div>
