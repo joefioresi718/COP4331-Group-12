@@ -98,13 +98,11 @@ function doSignup()
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
-		//console.log(jsonPayload);
 		xhr.send(jsonPayload);
 		
 		var jsonObject = JSON.parse( xhr.responseText );
 		
 		userId = jsonObject.id;
-		//userId = jsonOb
 
 		saveCookie();
 	
@@ -170,7 +168,6 @@ function doLogout()
 
 function addContact()
 {
-
 	firstName = "";
 	lastName = "";
 	email = "";
