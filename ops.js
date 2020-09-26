@@ -8,7 +8,7 @@ var lastName = "";
 function doLogin()
 {
 
-	console.log("logging in! ASDFGHJKJHGFDSDFGHJKJHGFDRGHJKJHGFRDE"); 
+	console.log("logging in!"); 
 
 	userId = 0;
 	firstName = "";
@@ -19,8 +19,8 @@ function doLogin()
 
 	// username = "RickL";
 	// password = "COP4331";
-	console.log("username: " + username);
-	console.log("password: " + password);
+	//console.log("username: " + username);
+	//console.log("password: " + password);
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
@@ -39,7 +39,7 @@ function doLogin()
 		var jsonObject = JSON.parse( xhr.responseText );
 
 		userId = jsonObject.id;
-		console.log("user ID is " + userId);
+		//console.log("user ID is " + userId);
 
 		if( userId < 1 )
 		{
@@ -121,10 +121,13 @@ function saveCookie()
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	console.log("successfuly saved cookie for: " + firstName + ", " + lastName + ", (" + userId + ")");
 }
 
 function readCookie()
 {
+
+	console.log("beginning the lovely process of reading cookies");
 	userId = -1;
 	var data = document.cookie;
 	var splits = data.split(",");
@@ -145,6 +148,8 @@ function readCookie()
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
+
+	console.log("the id we've found in the cookie is: " + userId);
 	
 	if( userId < 0 )
 	{
@@ -154,6 +159,8 @@ function readCookie()
 	{
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
+
+	console.log("we've successfully read the cookie");
 }
 
 function doLogout()
