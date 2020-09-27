@@ -183,7 +183,7 @@ function addContact()
 	var lastName = document.getElementById("lastNameContact").value;
 	var email = document.getElementById("emailContact").value;
 	var phone = document.getElementById("phoneContact").value;
-	document.getElementById("contactAddResult").innerHTML = "";
+	// document.getElementById("contactAddResult").innerHTML = "";
 	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "phone" : "' + phone + '", "ID" : "' + userId + '"}';
 	var url = urlBase + '/CreateContact.' + extension;
 	var xhr = new XMLHttpRequest();
@@ -195,7 +195,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				// document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 				console.log("added the contact!!! yay!!!");
 			}
 		};
@@ -204,7 +204,7 @@ function addContact()
 	catch(err)
 	{
 		console.log("didnt add the contact!! nayyyy :(");
-		document.getElementById("contactAddResult").innerHTML = err.message;
+		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 	
 }
