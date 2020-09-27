@@ -259,8 +259,10 @@ function searchContact()
 					//}
 				}
 				
+				
 				//document.getElementsByTagName("p")[0].innerHTML = contactList;
 				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
+				loadTable();
 			}
 		};
 		xhr.send(jsonPayload);

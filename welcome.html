@@ -34,6 +34,12 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet" 
+      href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"
+    />
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="./md5.js"></script>
     <script type="text/javascript" src="./ops.js"></script>
     <base href = "http://crm-group12.com"/>
@@ -53,12 +59,12 @@
     <div style="text-align: center;">
       <div class="container" id="container">
         <span id="contactSearchResult"></span>
-        <table class="table">
+        <table class="table table-fluid" id="myTable">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Actions</th>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="contactList">
