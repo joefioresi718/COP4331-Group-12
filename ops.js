@@ -274,10 +274,59 @@ function searchContact()
 	
 }
 
-function editContact(){
+function editContact(contactId){
+	firstName = "";
+	lastName = "";
+	email = "";
+	phone = "";
 
+	var firstName = document.getElementById("firstNameEditContact").value;
+	var lastName = document.getElementById("lastNameEditContact").value;
+	var email = document.getElementById("emailEditContact").value;
+	var phone = document.getElementById("phoneEditContact").value;
+
+	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "' + email + '", "phone" : "' + phone + '", "ID" : "' + contactId + '"}';
+	var url = urlBase + '/UpdateContact.' + extension;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+
+				console.log("updated the contact!!! yay!!!");
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		console.log("didnt update the contact!! nayyyy :(");
+	}
 }
 
-function deleteContact(){
-
+function deleteContact(contactId){
+	var jsonPayload = '{ID" : "' + contactId + '"}';
+	var url = urlBase + '/DeleteContact.' + extension;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				console.log("deleted the contact!!! yay!!!");
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		console.log("didnt delete the contact!! nayyyy :(");
+	}
 }
