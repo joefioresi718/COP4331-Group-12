@@ -236,14 +236,27 @@ function searchContact()
 				
 				for( var i=0; i<jsonObject.searchResults.length; i++ )
 				{
-					contactList += jsonObject.searchResults[i];
-					if( i < jsonObject.searchResults.length - 1 )
-					{
-						contactList += "<br />\r\n";
-					}
+					// begin table
+					contactList += "<tr>";
+
+					// insert pos #
+					contactList += "<th scope='row'>" + i + "</th>"
+
+					// insert first name
+					contactList += "<td>" + jsonObject.searchResults[i] + "</td>"
+
+					// close table
+					contactList += "</tr>";
+					
+					//contactList += jsonObject.searchResults[i];
+					//if( i < jsonObject.searchResults.length - 1 )
+					//{
+						// contactList += "<br />\r\n";
+					//}
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				//document.getElementsByTagName("p")[0].innerHTML = contactList;
+				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -253,4 +266,12 @@ function searchContact()
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
 	
+}
+
+function editContact(){
+
+}
+
+function deleteContact(){
+
 }
