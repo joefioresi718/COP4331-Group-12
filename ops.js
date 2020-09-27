@@ -245,9 +245,15 @@ function searchContact()
 					// insert first name
 					contactList += "<td>" + jsonObject.searchResults[i] + "</td>"
 
+					// edit button
+					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4' type='button' onclick='searchContact();'>Edit</button>";
+					
+					// delete button 
+					contactList += "<button class='btn btn-danger' type='button' onclick='searchContact();'>Delete</button>" + "</td>";
+
 					// close table
 					contactList += "</tr>";
-					
+
 					//contactList += jsonObject.searchResults[i];
 					//if( i < jsonObject.searchResults.length - 1 )
 					//{
