@@ -17,11 +17,8 @@ function doLogin()
 	var username = document.getElementById("loginUsername").value;
 	var password = document.getElementById("loginPassword").value;
 
-	// username = "RickL";
-	// password = "COP4331";
-	//console.log("username: " + username);
-	//console.log("password: " + password);
-//	var hash = md5( password );
+	var hash = md5(password);
+	password = hash;
 	
 	document.getElementById("loginResult").innerHTML = "";
 
@@ -84,8 +81,9 @@ function doSignup()
 	console.log("username: " + username);
 	console.log("password: " + password);
 	
-//	var hash = md5( password );
-	
+	var hash = md5(password);
+	password = hash;
+
 	document.getElementById("signupResult").innerHTML = "";
 
 //	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
