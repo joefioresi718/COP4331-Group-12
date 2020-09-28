@@ -313,7 +313,9 @@ function editContact(contactId){
 
 function deleteContact(contactId){
 	console.log("deleting contact with ID " + contactId);
+	//var jsonPayload = '{"search" : "' + srch + '","ID" : ' + userId + '}';
 	var jsonPayload = '{"ID" : ' + contactId + '}';
+	//var jsonPayload = '{ID" : "' + contactId + '"}';
 	var url = urlBase + '/DeleteContact.' + extension;
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);

@@ -253,10 +253,10 @@ function searchContact()
 					
 
 					// edit button
-					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4' type='button' onclick='editContact(" + jsonObject2[4] +  ");'>Edit</button>";
+					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4' type='button' onclick='editContact(" + jsonObject2[5] +  ");'>Edit</button>";
 					
 					// delete button 
-					contactList += "<button class='btn btn-danger' type='button' onclick='deleteContact(" + jsonObject2[4] + ");'>Delete</button>" + "</td>";
+					contactList += "<button class='btn btn-danger' type='button' onclick='deleteContact(" + jsonObject2[5] + ");'>Delete</button>" + "</td>";
 
 					// close table
 					contactList += "</tr>";
@@ -313,7 +313,7 @@ function editContact(contactId){
 
 function deleteContact(contactId){
 	console.log("deleting contact with ID " + contactId);
-	var jsonPayload = '{"ID" : ' + contactId + '}';
+	var jsonPayload = '{ID" : "' + contactId + '"}';
 	var url = urlBase + '/DeleteContact.' + extension;
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
