@@ -243,12 +243,15 @@ function searchContact()
 					contactList += "<th scope='row'>" + i + "</th>"
 
 					// insert first name, last name, email, phone
+					var jsonObject2 = JSON.parse(JSON.stringify(jsonObject.searchResults[i]));
+					
 					var numProperties = 4;
 					for( var j=0; j<numProperties; j++)
 					{
 						contactList += "<td>" + jsonObject2[i] + "</td>";
 					}
 					
+
 					// edit button
 					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4' type='button' onclick='searchContact();'>Edit</button>";
 					
@@ -259,6 +262,8 @@ function searchContact()
 					contactList += "</tr>";
 				}
 				
+				
+				//document.getElementsByTagName("p")[0].innerHTML = contactList;
 				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
 				loadTable();
 			}

@@ -26,6 +26,7 @@ p {
   width: 768px;
   max-width: 100%;
   min-height: 450px;
+  max-height: 70%;
   margin: 0 auto;
   position: fixed;
   top: 50%;
