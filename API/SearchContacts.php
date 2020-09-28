@@ -76,15 +76,9 @@
 	// prints out the id and names as json
 	function returnWithInfo( $searchResults, $searchCount )
 	{
-<<<<<<< HEAD
 	    //$retValue = "[";
 		$retValue .= '{"searchResults":' . $searchResults . ' , "searchCount":"' . $searchCount . '","error":"None"}';
 		//$retValue .= "]";
-=======
-	    $retValue = "[";
-		$retValue .= '{"searchResults":' . $searchResults . ' , "searchCount":"' . $searchCount . '","error":"None"}';
-		$retValue .= "]";
->>>>>>> 8b3796bf4d6cf1c6aa7c2daaec66a5201de096fa
 		sendResultInfoAsJson( $retValue);
 	}
 
