@@ -240,7 +240,7 @@ function searchContact()
 					contactList += "<tr>";
 
 					// insert pos #
-					contactList += "<th scope='row'>" + (i+1) + "</th>"
+					contactList += "<th scope='row'>" + i+1 + "</th>"
 
 					// insert first name, last name, email, phone
 					var jsonObject2 = JSON.parse(JSON.stringify(jsonObject.searchResults[i]));
