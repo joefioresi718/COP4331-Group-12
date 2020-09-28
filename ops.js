@@ -231,7 +231,9 @@ function searchContact()
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
-				
+
+				console.log("results: " + jsonObject.searchResults[0]);
+
 				for( var i=0; i<jsonObject.searchResults.length; i++ )
 				{
 					// begin table
@@ -240,9 +242,13 @@ function searchContact()
 					// insert pos #
 					contactList += "<th scope='row'>" + i + "</th>"
 
-					// insert first name
-					contactList += "<td>" + jsonObject.searchResults[i] + "</td>"
-
+					// insert first name, last name, email, phone
+					var numProperties = 4;
+					for( var j=0; j<numProperties; j++)
+					{
+						contactList += "<td>" + jsonObject2[i] + "</td>";
+					}
+					
 					// edit button
 					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4' type='button' onclick='searchContact();'>Edit</button>";
 					
@@ -251,16 +257,8 @@ function searchContact()
 
 					// close table
 					contactList += "</tr>";
-
-					//contactList += jsonObject.searchResults[i];
-					//if( i < jsonObject.searchResults.length - 1 )
-					//{
-						// contactList += "<br />\r\n";
-					//}
 				}
 				
-				
-				//document.getElementsByTagName("p")[0].innerHTML = contactList;
 				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
 				loadTable();
 			}

@@ -15,7 +15,7 @@
 	}
 	else
 	{
-		$sql = "SELECT FirstName from Contacts where FirstName like '%" . $inData["search"] . "%' and UserID=" . $inData["ID"];
+		$sql = "SELECT FirstName, LastName, Email, Phone, ID from Contacts where FirstName like '%" . $inData["search"] . "%' and UserID=" . $inData["ID"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -26,7 +26,22 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["FirstName"] . $row["LastName"] . $row["Email"] . $row["Phone"] . '"';
+				// '{"searchResults":' . $searchResults . ',"searchCount":"' . $searchCount . '","error":"None"}'
+				#        '{"searchResults":' . $searchResults . '}';
+				$contactResults =  "[" . 
+									' "' . $row["FirstName"] . '",' . 
+									' "' . $row["LastName"] . '",' . 
+									' "' . $row["Email"] . '",' . 
+									' "' . $row["Phone"] . '",' . 
+									' "' . $row["ID"] . '"' . 
+		                            // '{"FirstName":' . '"' .  $row["FirstName"] . '"' . '},' . 
+		                            // '{"LastName":' . '"' .  $row["LastName"] . '"' . '},' .
+		                            // '{"Email":' . '"' .  $row["Email"] . '"' . '},' .
+		                            // '{"Phone":' . '"' .  $row["Phone"] . '"' . '},' .
+		                            // '{"ID":' . '"' .  $row["ID"] . '"' . '}' .
+		                            "]";
+		        //$contactResults =   '{ "FirstName":' . "\"" $row["FirstName"] . "\"" .  '}';
+				$searchResults .= $contactResults;
 			}
 			$searchResults .= "]";
 			returnWithInfo( $searchResults, $searchCount );
@@ -45,7 +60,7 @@
 	}
 
 	// prints out json object
-	function sendResultInfoAsJson( $obj )
+	function sendResultInfoAsJson( $obj)
 	{
 		header('Content-type: application/json');
 		echo $obj;
@@ -55,14 +70,16 @@
 	function returnWithError( $err )
 	{
 		$retValue = '{"firstName":"","lastName":"","error":"' . $err . '","successfullyCreated":"false"}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson( $retValue);
 	}
 
 	// prints out the id and names as json
 	function returnWithInfo( $searchResults, $searchCount )
 	{
-		$retValue = '{"searchResults":' . $searchResults . ',"searchCount":"' . $searchCount . '","error":"None"}';
-		sendResultInfoAsJson( $retValue );
+	    //$retValue = "[";
+		$retValue .= '{"searchResults":' . $searchResults . ' , "searchCount":"' . $searchCount . '","error":"None"}';
+		//$retValue .= "]";
+		sendResultInfoAsJson( $retValue);
 	}
 
 ?>
