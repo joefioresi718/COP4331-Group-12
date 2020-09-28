@@ -248,7 +248,7 @@ function searchContact()
 					var numProperties = 4;
 					for( var j=0; j<numProperties; j++)
 					{
-						contactList += "<td>" + jsonObject2[j] + "</td>";
+						contactList += "<td>" + jsonObject2[i] + "</td>";
 					}
 					
 
