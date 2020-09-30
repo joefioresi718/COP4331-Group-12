@@ -1,129 +1,110 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="src/styles.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous" />
 
     <script type="text/javascript" src="./md5.js"></script>
     <script type="text/javascript" src="./ops.js"></script>
-    <base href = "http://crm-group12.com"/>
-  </head>
+    <base href="http://crm-group12.com" />
+</head>
 
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">G12 Contacts App</a>
-  </nav>
+<map name="logomap">
+    <area shape="rect" coords="0,0,350,52" href="welcome.html">
+</map>
 
-  <body>
+<nav class="navbar navbar-light bg-light">
+    <div id="logoImg">
+        <a><img src="images/miamiSunsetSmol.png" usemap="#logomap" alt="Miami Sunset Contacts"</a>
+    </div>
+</nav>
+<body>
     <div style="text-align: center;">
-      <div class="container" id="container">
-        <div class="form-container sign-up-container">
-          <div class ="form">
-            <h1>Sign Up</h1>
-            <input
-              type="text"
-              id="signupUsername"
-              name="username"
-              placeholder="Username"
-            />
-            <input
-              type="text"
-              id="signupFirstName"
-              name="firstName"
-              placeholder="First Name"
-            />
-            <input
-              type="text"
-              id="signupLastName"
-              name="lastName"
-              placeholder="Last Name"
-            />
-            <input
-              type="text"
-              id="signupEmail"
-              name="email"
-              placeholder="Email"
-            />
-            <input
-              type="password"
-              id="signupPassword"
-              name="password"
-              placeholder="Password"
-            />
-            <button class="classic" id="signUpActive" onclick="doSignup();">Sign Up</button>
-            <span id="signupResult"></span>
-          </div>
-        </div>
-        <div class="form-container sign-in-container">
-          <div class ="form">
-            <h1>Login</h1>
-            <input
-              type="text"
-              id="loginUsername"
-              name="username"
-              placeholder="Username"
-            />
-            <input
-              type="password"
-              id="loginPassword"
-              name="password"
-              placeholder="Password"
-            />
-            <button class="classic" id="loginActive" onclick="doLogin();">Login</button>
-            <span id="loginResult"></span>
-          </div>
-        </div>
-        <div class="form-container overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button class="ghost" id="loginGhost">Login</button>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <div class="form">
+                    <h1>Sign Up</h1>
+                    <input type="text"
+                           id="signupUsername"
+                           name="username"
+                           placeholder="Username" />
+                    <input type="text"
+                           id="signupFirstName"
+                           name="firstName"
+                           placeholder="First Name" />
+                    <input type="text"
+                           id="signupLastName"
+                           name="lastName"
+                           placeholder="Last Name" />
+                    <input type="text"
+                           id="signupEmail"
+                           name="email"
+                           placeholder="Email" />
+                    <input type="password"
+                           id="signupPassword"
+                           name="password"
+                           placeholder="Password" />
+                    <button class="classic" id="signUpActive" onclick="doSignup();">Sign Up</button>
+                    <span id="signupResult"></span>
+                </div>
             </div>
-            <div class="overlay-panel overlay-right">
-              <h1>Hello, friend!</h1>
-              <p>
-                Enter your personal details and start your journey with us!
-              </p>
-              <button class="ghost" id="signUpGhost">Sign Up</button>
+            <div class="form-container sign-in-container">
+                <div class="form">
+                    <h1>Login</h1>
+                    <input type="text"
+                           id="loginUsername"
+                           name="username"
+                           placeholder="Username" />
+                    <input type="password"
+                           id="loginPassword"
+                           name="password"
+                           placeholder="Password" />
+                    <button class="classic" id="loginActive" onclick="doLogin();">Login</button>
+                    <span id="loginResult"></span>
+                </div>
             </div>
-          </div>
+            <div class="form-container overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome back!</h1>
+                        <p>
+                            To keep connected with us please login with your personal info
+                        </p>
+                        <button class="ghost" id="loginGhost">Login</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, friend!</h1>
+                        <p>
+                            Enter your personal details and start your journey with us!
+                        </p>
+                        <button class="ghost" id="signUpGhost">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            </form>
         </div>
-      </form>
-      </div>
     </div>
 
     <script src="src/index.js"></script>
-  </body>
+</body>
 </html>

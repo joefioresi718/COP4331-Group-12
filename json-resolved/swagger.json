@@ -53,7 +53,7 @@
         }
       }
     },
-    "/SignUp.php" : {
+    "/CreateUser.php" : {
       "post" : {
         "tags" : [ "Users" ],
         "summary" : "Adds user to user table",

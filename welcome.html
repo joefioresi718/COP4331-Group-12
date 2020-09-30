@@ -45,14 +45,20 @@
     <base href = "http://crm-group12.com"/>
   </head>
 
+  <map name="logomap">
+      <area shape="rect" coords="0,0,350,52" href="welcome.html">
+  </map>
+
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="welcome.html">G12 Contacts App</a>
-    <form class="form-inline">
-        <button class="btn btn-primary mr-sm-4" type="button" data-toggle="modal" data-target="#mymodal">Add Contact</button>
-        <input class="form-control mr-sm-2" type="search" id="searchText" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary mr-sm-4" type="button" onclick="searchContact();">Search</button>
-        <button class="btn btn-primary mr-sm-4" type="button" onclick="doLogout();">Logout</button>
-    </form>
+      <div id="logoImg">
+          <a><img src="images/miamiSunsetSmol.png" usemap="#logomap" alt="Miami Sunset Contacts"</a>
+      </div>
+      <form class="form-inline">
+          <button class="btn btn-primary mr-sm-4" type="button" data-toggle="modal" data-target="#mymodal">Add Contact</button>
+          <input class="form-control mr-sm-2" type="search" id="searchText" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary mr-sm-4" type="button" onclick="searchContact();">Search</button>
+          <button class="btn btn-primary mr-sm-4" type="button" onclick="doLogout();">Logout</button>
+      </form>
   </nav>
 
   <body>    
