@@ -197,8 +197,6 @@ function addContact()
 			{
 				// document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 				console.log("added the contact!!! yay!!!");
-				console.log("search contact....");
-				searchContact();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -208,6 +206,8 @@ function addContact()
 		console.log("didnt add the contact!! nayyyy :(");
 		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
+	searchContact();
+	console.log("search contact....");
 }
 
 function searchContact()
@@ -301,8 +301,6 @@ function editContact(contactId){
 			{
 
 				console.log("updated the contact!!! yay!!!");
-				searchContact();
-				console.log("search contact....");
 			}
 		};
 		xhr.send(jsonPayload);
@@ -311,7 +309,8 @@ function editContact(contactId){
 	{
 		console.log("didnt update the contact!! nayyyy :(");
 	}
-
+	searchContact();
+	console.log("search contact....");
 	clearEditInputFields();
 
 }
@@ -330,8 +329,6 @@ function deleteContact(contactId){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				console.log("deleted the contact!!! yay!!!");
-				console.log("search contact....");
-				searchContact();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -340,4 +337,6 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
+	console.log("search contact....");
+	searchContact();
 }
