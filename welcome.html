@@ -46,12 +46,14 @@
   </head>
 
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="welcome.html">G12 Contacts App</a>
+    <a class="navbar-brand"><img src="images/miamiSunset.png" usemap="#logomap" alt="Miami Sunset Contacts"</a>
     <form class="form-inline">
-        <button class="btn btn-primary mr-sm-4" type="button" data-toggle="modal" data-target="#mymodal">Add Contact</button>
-        <input class="form-control mr-sm-2" type="search" id="searchText" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary mr-sm-4" type="button" onclick="searchContact();">Search</button>
-        <button class="btn btn-primary mr-sm-4" type="button" onclick="doLogout();">Logout</button>
+        <div style="position:fixed; right:40px; top:20px;">
+            <button class="positive" type="button" data-toggle="modal" data-target="#mymodal">Add Contact</button>
+            <input class="form-control mr-sm-2" type="search" id="searchText" placeholder="Search" aria-label="Search">
+            <button class="positive" type="button" onclick="searchContact();">Search</button>
+            <button class="negative" type="button" onclick="doLogout();">Logout</button>
+        </div>
     </form>
   </nav>
 
@@ -111,9 +113,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" type="button" data-dismiss="modal" id="addContact" onclick="addContact(); clearInputFields();">Add</button>
+            <button class="positive" type="button" data-dismiss="modal" id="addContact" onclick="addContact(); clearInputFields();">Add</button>
             <!-- <span id="contactAddResult"></span>  -->
-            <button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button> 
+            <button class="negative" type="button" data-dismiss="modal">Cancel</button> 
           </div>
         </div>
       </div>
@@ -154,9 +156,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary editContact" type="button" data-dismiss="modal" id="editContact" value="" onclick="clearInputFields();">Save</button>
+            <button class="positive" type="button" data-dismiss="modal" id="editContact" value="" onclick="clearInputFields();">Save</button>
             <!-- <span id="contactAddResult"></span>  -->
-            <button class="btn btn-default" id="cancelEdit" type="button" data-dismiss="modal">Cancel</button> 
+            <button class="negative" id="cancelEdit" type="button" data-dismiss="modal">Cancel</button> 
           </div>
         </div>
       </div>
