@@ -73,6 +73,10 @@ button.ghost {
   font-size: 0.6em;
 }
 
+#logoImg {
+    float:left;
+}
+
 .form {
   background-color: #ffffff;
   display: flex;
