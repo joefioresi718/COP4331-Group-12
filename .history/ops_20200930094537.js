@@ -206,7 +206,7 @@ function addContact()
 		console.log("didnt add the contact!! nayyyy :(");
 		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	setTimeout(searchContact(), 100);
+	
 }
 
 function searchContact()
@@ -258,7 +258,7 @@ function searchContact()
 
 					
 					// delete button 
-					contactList += "<button class='btn btn-danger' type='button' id='" + jsonObject2[4] + "' onclick='reply_click_delete(this.id);' data-toggle='modal' data-target='#mymodal3'>Delete</button>" + "</td>";
+					contactList += "<button class='btn btn-danger' type='button' id='" + jsonObject2[4] + "' onclick='reply_click_delete(this.id);' data-toggle='modal' data-target='#mymodal2'>Delete</button>" + "</td>";
 
 					// close table
 					contactList += "</tr>";
@@ -308,7 +308,7 @@ function editContact(contactId){
 	{
 		console.log("didnt update the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
+	searchContact();
 	clearEditInputFields();
 
 }
@@ -335,5 +335,5 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
+	searchContact();
 }

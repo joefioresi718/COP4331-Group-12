@@ -45,15 +45,10 @@ let latest = -1;
 
 function reply_click_delete(contactId)
 {
-    latest=contactId
     console.log("about to delete");
-    let button1 = document.getElementById('deleteContactBtn');
-    button1.addEventListener('click', function(){
-        if(contactId == latest)
-        {
-            deleteContact(contactId);
-        }
-    });
+    let button1 = document.getElementById('deleteContact');
+    let button2 = document.getElementById('cancelDelete');
+
 }
 
 function reply_click(contactId)

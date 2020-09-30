@@ -48,7 +48,7 @@ function reply_click_delete(contactId)
     latest=contactId
     console.log("about to delete");
     let button1 = document.getElementById('deleteContactBtn');
-    button1.addEventListener('click', function(){
+    button1.addEventListener('click', function handler(e){
         if(contactId == latest)
         {
             deleteContact(contactId);

@@ -206,7 +206,7 @@ function addContact()
 		console.log("didnt add the contact!! nayyyy :(");
 		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	setTimeout(searchContact(), 100);
+	
 }
 
 function searchContact()
@@ -254,11 +254,11 @@ function searchContact()
 					}
 
 					// edit button
-					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4 editContactOpen' type='button' id='" + jsonObject2[4] + "' onclick='reply_click(this.id);' data-toggle='modal' data-target='#mymodal2'>Edit</button>";
+					contactList += "<td>" + "<button class='btn btn-primary mr-sm-4 editContactOpen' type='button' id='" + jsonObject2[4] + "' onclick='reply_click(this.id);' data-id='" + jsonObject2[4] + "' data-toggle='modal' data-target='#mymodal2'>Edit</button>";
 
 					
 					// delete button 
-					contactList += "<button class='btn btn-danger' type='button' id='" + jsonObject2[4] + "' onclick='reply_click_delete(this.id);' data-toggle='modal' data-target='#mymodal3'>Delete</button>" + "</td>";
+					contactList += "<button class='btn btn-danger' type='button' id='" + jsonObject2[4] + "' onclick='reply_click_delete(this.id);' searchContact();'>Delete</button>" + "</td>";
 
 					// close table
 					contactList += "</tr>";
@@ -303,14 +303,12 @@ function editContact(contactId){
 			}
 		};
 		xhr.send(jsonPayload);
+		searchContact();
 	}
 	catch(err)
 	{
 		console.log("didnt update the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
-	clearEditInputFields();
-
 }
 
 function deleteContact(contactId){
@@ -335,5 +333,4 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
 }

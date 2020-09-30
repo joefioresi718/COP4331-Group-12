@@ -45,14 +45,17 @@ let latest = -1;
 
 function reply_click_delete(contactId)
 {
-    latest=contactId
     console.log("about to delete");
-    let button1 = document.getElementById('deleteContactBtn');
-    button1.addEventListener('click', function(){
+    let button1 = document.getElementById('deleteContact');
+    let button2 = document.getElementById('cancelDelete');
+    button1.addEventListener('click', function handler(e){
         if(contactId == latest)
         {
-            deleteContact(contactId);
+            editContact(contactId);
         }
+    });
+    button2.addEventListener('click', function(){
+        clearEditInputFields();
     });
 }
 

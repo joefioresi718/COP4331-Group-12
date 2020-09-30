@@ -206,7 +206,7 @@ function addContact()
 		console.log("didnt add the contact!! nayyyy :(");
 		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	setTimeout(searchContact(), 100);
+	setTimeout(searchContact(), 50);
 }
 
 function searchContact()
@@ -308,7 +308,7 @@ function editContact(contactId){
 	{
 		console.log("didnt update the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
+	setTimeout(searchContact(), 50);
 	clearEditInputFields();
 
 }
@@ -335,5 +335,5 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 100);
+	setTimeout(searchContact(), 50);
 }

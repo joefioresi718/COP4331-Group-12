@@ -206,7 +206,7 @@ function addContact()
 		console.log("didnt add the contact!! nayyyy :(");
 		// document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	setTimeout(searchContact(), 100);
+	setTimeout(searchContact(), 200);
 }
 
 function searchContact()
