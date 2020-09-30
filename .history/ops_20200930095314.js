@@ -335,5 +335,5 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 500);
+	setTimeout(searchContact(), 100);
 }

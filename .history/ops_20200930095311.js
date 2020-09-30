@@ -308,7 +308,7 @@ function editContact(contactId){
 	{
 		console.log("didnt update the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 500);
+	setTimeout(searchContact(), 100);
 	clearEditInputFields();
 
 }
@@ -335,5 +335,5 @@ function deleteContact(contactId){
 	{
 		console.log("didnt delete the contact!! nayyyy :(");
 	}
-	setTimeout(searchContact(), 500);
+	setTimeout(searchContact(), 100);
 }
