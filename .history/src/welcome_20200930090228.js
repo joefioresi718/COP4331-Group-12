@@ -54,11 +54,10 @@ function reply_click(contactId)
         console.log(contactId);
         editContact(contactId);
         button1.removeEventListener('click', arguments.callee);
-        clearEditInputFields();
+        onclick="clearEditInputFields();"
     });
     button2.addEventListener('click', function(){
         button2.removeEventListener('click', arguments.callee);
-        clearEditInputFields();
         //button1.removeEventListener('click', e);
     });
     // $('#editContact').click(function handler(){

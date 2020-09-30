@@ -10,8 +10,8 @@ function clearEditInputFields()
 {
     document.getElementById("firstNameEditContact").value = "";
 	document.getElementById("lastNameEditContact").value = "";
-	document.getElementById("emailEditContact").value = "";
-    document.getElementById("phoneEditContact").value = "";
+	document.getElementById("emailContact").value = "";
+    document.getElementById("phoneContact").value = "";   
 }
 
 function loadTable(){
@@ -54,11 +54,9 @@ function reply_click(contactId)
         console.log(contactId);
         editContact(contactId);
         button1.removeEventListener('click', arguments.callee);
-        clearEditInputFields();
     });
     button2.addEventListener('click', function(){
         button2.removeEventListener('click', arguments.callee);
-        clearEditInputFields();
         //button1.removeEventListener('click', e);
     });
     // $('#editContact').click(function handler(){

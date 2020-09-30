@@ -58,7 +58,6 @@ function reply_click(contactId)
     });
     button2.addEventListener('click', function(){
         button2.removeEventListener('click', arguments.callee);
-        clearEditInputFields();
         //button1.removeEventListener('click', e);
     });
     // $('#editContact').click(function handler(){
