@@ -75,12 +75,6 @@ function doSignup()
 	var email = document.getElementById("signupEmail").value;
 	var password = document.getElementById("signupPassword").value;
 	
-	if (firstName.length <= 0 || lastName.length <= 0 || email.length <= 0 || 
-		username.length <= 0 || password.length <= 0) {
-		document.getElementById("signupResult").innerHTML = "Some fields are empty!";
-		return;
-	}
-
 	var hash = md5(password);
 	password = hash;
 
