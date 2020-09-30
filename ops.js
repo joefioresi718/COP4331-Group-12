@@ -80,11 +80,6 @@ function doSignup()
 	console.log("email: " + email);
 	console.log("username: " + username);
 	console.log("password: " + password);
-
-	if (firstName.length <= 0 || lastName.length <= 0 || username.length <= 0 || email.length <= 0 || password.length <= 0) {
-		console.log("one of or more the log in parameters are blank, what a shame");
-		return false;
-    }
 	
 	var hash = md5(password);
 	password = hash;
@@ -154,7 +149,7 @@ function readCookie()
 
 	console.log("the id we've found in the cookie is: " + userId);
 	
-	if(userId < 0)
+	if( userId < 0 )
 	{
 		window.location.href = "index.html";
 	}
