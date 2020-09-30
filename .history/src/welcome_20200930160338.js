@@ -44,7 +44,9 @@ function reply_click(contactId)
 {
     latest=contactId;
     console.log("we are in the first layer " + contactId);
-
+    // $('#cancel').click(function handler() {
+    //     e.removeEventListener(e.type, handler);
+    // });
     let button1 = document.getElementById('editContact');
     let button2 = document.getElementById('cancelEdit');
     button1.addEventListener('click', function handler(e){

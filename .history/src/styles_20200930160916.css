@@ -194,7 +194,7 @@ button.ghost {
   transform: translateX(0%);
 }
 
-.modal-body{
+.modal-body-big{
   position: relative;
   overflow-y: auto;    
   overflow-x: auto;
